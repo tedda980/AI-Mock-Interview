@@ -5,13 +5,13 @@ import { UserButton } from "@clerk/nextjs";
 function Header() {
   return (
     <section>
-      <div className="bg-gray-100 pb-6 pt-3">
+      <div className="bg-gray-100 pb-4 pt-3">
         <div>
           <img src={logo} />
         </div>
         <div>
-          <ul className="flex space-x-5 lg:ml-[545px] text-[16px]">
-            <li className="text-blue-800 transition-transform hover:scale-x-110">
+          <ul className="flex space-x-5 lg:ml-[400px] md:ml-56 sm:ml-32 text-[16px]">
+            <li className="text-blue-900 transition-transform hover:scale-x-110">
               Dashboard
             </li>
             <li className="hover:text-blue-800 transition-transform hover:scale-x-110">
@@ -23,7 +23,7 @@ function Header() {
             <li className="hover:text-blue-800 transition-transform hover:scale-x-110">
               How it Works?
             </li>
-            <li className="lg:pl-[350px]">
+            <li className="lg:pl-[480px] md:pl-72 sm:pl-32">
               <UserButton />
             </li>
           </ul>
