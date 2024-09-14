@@ -12,9 +12,32 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { chatSession } from "@/utils/GeminiAIModal";
 
 function AddNewInterview() {
   const [openDailog, setOpenDailog] = useState(false);
+  const [jobPosition, setJobPosition] = useState();
+  const [jobDesc, setJobDesc] = useState();
+  const [jobExperience, setJobExperience] = useState();
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    console.log(jobPosition, jobDesc, jobExperience);
+
+    const InputPromt =
+      "Job Position: " +
+      jobPosition +
+      ", Job Description:" +
+      jobDesc +
+      ", Years of Experience:" +
+      jobExperience +
+      ", Depends on this information please give me " +
+      process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT +
+      " interview question with Answered in Json Format,Give question and answered as field in JSON";
+    const result = await chatSession.sendMessage(InputPromt);
+
+    console.log(result.response.text());
+  };
 
   return (
     <div>
@@ -42,37 +65,54 @@ function AddNewInterview() {
               Tell us more about your job interviewing
             </DialogTitle>
             <DialogDescription>
-              <div>
-                <h2>
-                  Add Details about you job position/role,Job description &
-                  years of experience
-                </h2>
+              <form onSubmit={onSubmit}>
+                <div>
+                  <h2>
+                    Add Details about you job position/role,Job description &
+                    years of experience
+                  </h2>
 
-                <div className="mt-6 my-2">
-                  <label>Job Position/Role</label>
-                  <Input placeholder="Eg.Full Stack Developer" />
-                </div>
+                  <div className="mt-6 my-2">
+                    <label>Job Position/Role</label>
+                    <Input
+                      placeholder="Eg.Full Stack Developer"
+                      required
+                      onChange={(event) => setJobPosition(event.target.value)}
+                    />
+                  </div>
 
-                <div className="mt-6 my-2">
-                  <label>Job Description/ Tech Stack (In Short)</label>
-                  <Textarea placeholder="Eg.React,NodeJs,MySql ..." />
+                  <div className="mt-6 my-2">
+                    <label>Job Description/ Tech Stack (In Short)</label>
+                    <Textarea
+                      placeholder="Eg.React,NodeJs,MySql ..."
+                      required
+                      onChange={(event) => setJobDesc(event.target.value)}
+                    />
+                  </div>
+                  <div className="mt-6 my-2">
+                    <label>Years of experience</label>
+                    <Input
+                      placeholder="Eg. 2"
+                      type="number"
+                      max="25"
+                      required
+                      onChange={(event) => setJobExperience(event.target.value)}
+                    />
+                  </div>
                 </div>
-                <div className="mt-6 my-2">
-                  <label>Years of experience</label>
-                  <Input placeholder="Eg. 2" type="number" />
+                <div className="space-x-4 pt-2 text-end">
+                  <Button
+                    type="button"
+                    className="bg-orange-300 text-white"
+                    onClick={() => setOpenDailog(false)}
+                  >
+                    Cancel
+                  </Button>
+                  <Button type="submit" className="bg-orange-300 text-white">
+                    Start interview
+                  </Button>
                 </div>
-              </div>
-              <div className="space-x-4 pt-2 text-end">
-                <Button
-                  className="bg-orange-300 text-white"
-                  onClick={() => setOpenDailog(false)}
-                >
-                  Cancel
-                </Button>
-                <Button className="bg-orange-300 text-white">
-                  Start interview
-                </Button>
-              </div>
+              </form>
             </DialogDescription>
           </DialogHeader>
         </DialogContent>

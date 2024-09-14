@@ -10,7 +10,7 @@ function Header() {
           <img src={logo} />
         </div>
         <div>
-          <ul className="flex space-x-5 lg:ml-[400px] md:ml-56 sm:ml-32 text-[16px]">
+          <ul className="flex space-x-5 lg:ml-[520px] md:ml-60 sm:ml-40 text-[16px]">
             <li className="text-blue-900 transition-transform hover:scale-x-110">
               Dashboard
             </li>
@@ -23,7 +23,7 @@ function Header() {
             <li className="hover:text-blue-800 transition-transform hover:scale-x-110">
               How it Works?
             </li>
-            <li className="lg:pl-[480px] md:pl-72 sm:pl-32">
+            <li className="lg:pl-[380px] md:pl-72 sm:pl-32">
               <UserButton />
             </li>
           </ul>
