@@ -6,6 +6,7 @@ import { eq } from "drizzle-orm";
 import { Lightbulb, WebcamIcon } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import Webcam from "react-webcam";
+import Link from "next/link";
 
 function Interview({ params }) {
   const [interviewData, setInterviewData] = useState();
@@ -66,7 +67,11 @@ function Interview({ params }) {
           ) : (
             <>
               <WebcamIcon className="h-72 w-full p-20 my-7 bg-secondary rounded-lg border" />
-              <Button variant="ghost" className="w-full" onClick={() => setWebCamEnabled(true)}>
+              <Button
+                variant="ghost"
+                className="w-full"
+                onClick={() => setWebCamEnabled(true)}
+              >
                 Enable Web Cam and Microphone
               </Button>
             </>
@@ -74,7 +79,9 @@ function Interview({ params }) {
         </div>
       </div>
       <div className="flex justify-end items-end">
-        <Button>Start Interview</Button>
+        <Link href={"/dashboard/interview/"+params.interviewId+"/start"}>
+          <Button>Start Interview</Button>
+        </Link>
       </div>
     </div>
   );
