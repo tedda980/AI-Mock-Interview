@@ -90,7 +90,9 @@ function AddNewInterview() {
       >
         <h2 className="font-semibold text-md">+ Add New</h2>
       </div>
-      <div className="mt-5 text-xl font-semibold mb-6">
+
+
+      {/* <div className="mt-5 text-xl font-semibold mb-6">
         <h2>Previous Mock Interview</h2>
       </div>
       <div className="flex space-x-4 ">
@@ -98,7 +100,8 @@ function AddNewInterview() {
         <div className="border rounded-lg w-80 h-24 bg-gray-100"></div>
         <div className="border rounded-lg w-80 h-24 bg-gray-100"></div>
         <div className="border rounded-lg w-80 h-24 bg-gray-100"></div>
-      </div>
+      </div> */}
+
 
       <Dialog open={openDailog}>
         <DialogContent className="max-w-2xl">

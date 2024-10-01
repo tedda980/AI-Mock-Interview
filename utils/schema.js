@@ -20,5 +20,5 @@ export const UserAnswer = pgTable("userAnswer", {
   feedback: text("feedback"),
   rating: varchar("rating"),
   userEmail: varchar("userEmail"),
-  createAt: varchar("createdAt"),
+  createdAt: varchar("createdAt"),
 });
