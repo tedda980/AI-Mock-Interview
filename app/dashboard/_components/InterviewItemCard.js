@@ -32,7 +32,7 @@ function InterviewItemCard({ interview }) {
         <Button
           size="sm"
           variant="outline"
-          className="w-full"
+          className="w-full bg-orange-200"
           onClick={onStart}
         >
           Start
