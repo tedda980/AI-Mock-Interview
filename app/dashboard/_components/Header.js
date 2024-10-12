@@ -11,16 +11,16 @@ function Header() {
         </div>
         <div>
           <ul className="flex space-x-5 lg:ml-[520px] md:ml-60 sm:ml-40 text-[16px]">
-            <li className="text-blue-900 transition-transform hover:scale-x-110">
+            <li className="text-orange-300 transition-transform hover:scale-x-110 cursor-pointer">
               Dashboard
             </li>
-            <li className="hover:text-blue-800 transition-transform hover:scale-x-110">
+            <li className="hover:text-orange-300 transition-transform hover:scale-x-110 cursor-pointer">
               Questions
             </li>
-            <li className="hover:text-blue-800 transition-transform hover:scale-x-110">
+            <li className="hover:text-orange-300 transition-transform hover:scale-x-110 cursor-pointer">
               Upgrade
             </li>
-            <li className="hover:text-blue-800 transition-transform hover:scale-x-110">
+            <li className="hover:text-orange-300 transition-transform hover:scale-x-110 cursor-pointer">
               How it Works?
             </li>
             <li className="lg:pl-[380px] md:pl-72 sm:pl-32">
