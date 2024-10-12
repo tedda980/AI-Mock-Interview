@@ -91,18 +91,6 @@ function AddNewInterview() {
         <h2 className="font-semibold text-md">+ Add New</h2>
       </div>
 
-
-      {/* <div className="mt-5 text-xl font-semibold mb-6">
-        <h2>Previous Mock Interview</h2>
-      </div>
-      <div className="flex space-x-4 ">
-        <div className="border rounded-lg w-80 h-24 bg-gray-100"></div>
-        <div className="border rounded-lg w-80 h-24 bg-gray-100"></div>
-        <div className="border rounded-lg w-80 h-24 bg-gray-100"></div>
-        <div className="border rounded-lg w-80 h-24 bg-gray-100"></div>
-      </div> */}
-
-
       <Dialog open={openDailog}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
@@ -113,8 +101,8 @@ function AddNewInterview() {
               <form onSubmit={onSubmit}>
                 <div>
                   <h2>
-                    Add Details about you job position/role,Job description &
-                    years of experience
+                    Add Details about your job position/role, Job description
+                    &amp; years of experience 
                   </h2>
 
                   <div className="mt-6 my-2">
@@ -160,8 +148,8 @@ function AddNewInterview() {
                   >
                     {loading ? (
                       <>
-                        <LoaderCircle className="animate-spin" /> "Generating
-                        from AI"
+                        <LoaderCircle className="animate-spin" /> Generating
+                        from AI
                       </>
                     ) : (
                       "Start Interview"
